@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Zeichnen auf der Canvas</title>
+		<style>	
+			body, html{padding:0; margin:0;}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>	
+	<body>
+		<canvas id="myCanvas" width="700" height="350"></canvas>
+		<script src="dauvas.js"></script>
+		
+		<script>
+			//fullScreen();
+			var a=100;
+			setFillColor("#FF9999");				
+			fillCircle(xmax/4, ymax/2, xmax*0.65);								
+			setFillColor("#FF0000");				
+			fillRectCenter(xmax/2,ymax/2,a,a);
+			setFillColor("white");
+			fillRectCenter(xmax/2,ymax/2,a*0.8,a*0.2);
+			fillRectCenter(xmax/2,ymax/2,a*0.2,a*0.8);
+			setFillColor("red");
+			drawText(100,100,"Hopp Schwiiz",80);
+		</script>
+			
+		</body>
+</html>
+
+
+
+<!--
+/*
+var xmax, ymax										// Bildschirmgrösse in Pixeln, Ursprung oben links
+function fillRect(x1,y1,w,h)						// ausgefülltes Rechteck: x1,y1, width, height
+function rect(x1,y1,w,h)							// ohne Füllung, siehe setLineWidth
+function fillRectCenter(xM,yM,width,height)			// zentriertes, ausgefülltes Rechteck: x,y: Zentrum des Rechtecks
+function rectCenter(x,y,width,height)				// ohne Füllung, siehe setLineWidth
+function fillRectCenterRotate(x,y,width,height,angle);  // ...gedreht um Winkel alpha im Uhrzeigersinn
+function rectCenterRotate(x,y,width,height,angle);		// ...gedreht um Winkel alpha im Uhrzeigersinn
+
+function fillTriangle(x1,y1,x2,y2,x3,y3)			// Drreieck aus 3 Punkte
+function triangle(x1,y1,x2,y2,x3,y3)						
+function fillEquiTriangle(x1,y1,a)					// gleichseitiges Dreieck
+function equiTriangle(x,y,a)
+						
+function line(x1,y1,x2,y2)
+function fillCircle(x,y,radius)
+function circle(x,y,radius)
+function fillOval(x,y,rx,ry);
+function oval(x,y,rx,ry);
+fillOvalRotate(x,y,rx,ry,alpha);
+function drawText(x,y,text, size);
+function drawTextFont(x,y,text,size,font)
+function fillPoly(flatArray)						// Polygon e.g. [0,0,100,100,70,0]
+function poly(flatArray)
+
+function setFillColor(farbe)						// z.B. "FF2288" im Hex Format oder "blue"
+function setFillColorRGB(r,g,b)						
+function setLineColor(farbe)
+function setLineColorRGB(r,g,b)
+function setLineWidth(d)
+function setBackgroundColorRGB(r,g,b)
+function setBackgroundColor(farbe)					// siehe auch http://tomheller.de/theholycymbal/html-farben.html
+function clearScreen()
+resize();											// passt Fenster dem Bildschirm an
+
+Profidokumentation: https://www.w3schools.com/html/html5_canvas.asp and https://www.w3schools.com/tags/ref_canvas.asp
+*/
+-->

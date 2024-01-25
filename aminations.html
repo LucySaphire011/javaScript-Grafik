@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Animated CH Flag</title>
+		<style>	
+			body, html{padding:0; margin:0;}
+		</style>
+	</head>	
+	<body>
+		<canvas id="myCanvas" width="700" height="350"></canvas>
+		<script src="Dauvas.js"></script>
+		
+		<script>
+			//fullScreen();
+			function chFlag(x,y,a){							
+				setFillColor("#FF0000");				
+				fillRectCenter(x,y,a,a);
+				setFillColor("white");
+				fillRectCenter(x,y,a*0.8,a*0.2);
+				fillRectCenter(x,y,a*0.2,a*0.8);
+			}
+			//chFlag(100,100,50);
+			
+			function chLine(){
+				var x=0,y=0, dx=40, dy=20;		
+				function step(){
+					chFlag(x,y,30);
+					x+=dx; y+=dy;
+					if(x>600) clearInterval(run);
+				}
+				var run=setInterval(step,40);				
+			}
+			//chLine();
+			
+			function chLissajous(){
+			var xm=xmax/2, ym=ymax/2, rx=500; ry=200;
+			var t=0, dt=50;			// in ms 
+			var wx=0.001, wy=0.002;
+				function step(){					// als nested function!
+					let x=xm+rx*Math.cos(t*wx);
+					let y=ym+ry*Math.sin(t*wy);
+					clearScreen();
+					var a=0.1*x;
+					//var a=0.01*t;
+					chFlag(x,y,a);
+					t+=dt;
+					if(t>10000) clearInterval(run);
+				}
+				var run=setInterval(step,dt);				
+			}
+			chLissajous();
+			
+		</script>
+			
+		</body>
+</html>
+
+
+
